@@ -1,21 +1,22 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import ManufactureList from '../views/ManufactureList.vue'
+import HomeView from '../views/HomeView.vue'
+import ItemDetail from '../views/ItemDetail.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'home',
+    component: HomeView
   },
   {
-    path: '/manufacture-list',
-    name: 'ManufactureList',
-    component: ManufactureList
-  }
+    path: '/item-detail/:itemId',
+    name: 'ItemDetail',
+    component: ItemDetail,
+    props: true
+  },
 ]
 
 const router = new VueRouter({
